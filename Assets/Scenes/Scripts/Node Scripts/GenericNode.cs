@@ -6,7 +6,7 @@ public class GenericNode<T> : MonoBehaviour
 {
     //fields
     [SerializeField] private T data;
-    public List<GenericNode<T>> adjNodes;
+    [SerializeField] private List<GenericNode<T>> adjNodes;
 
     //Constructors
     public GenericNode()
@@ -34,4 +34,13 @@ public class GenericNode<T> : MonoBehaviour
         set { adjNodes = value; }
     }
 
+    public void OnMouseOver()
+    {
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            GraphController.Nodes.Remove(this.gameObject);
+            Destroy(this.gameObject);
+        }
+        
+    }
 }

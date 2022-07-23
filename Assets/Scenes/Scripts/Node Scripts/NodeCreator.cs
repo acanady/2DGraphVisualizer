@@ -8,15 +8,25 @@ public class NodeCreator : MonoBehaviour
 
     private void Update()
     {
+        SpawnNode();
+    }
+
+    
+
+    private void SpawnNode()
+    {
         if (Input.GetMouseButtonDown(0))
         {
-            Vector3 mousePosition = Input.mousePosition;
-            mousePosition.z = Mathf.Abs(Camera.main.transform.position.z);
+            Vector2 mousePosition = Input.mousePosition;
             mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
-            mousePosition.z = 0f;
-
-            GameObject node = Instantiate(nodePrefab, mousePosition, Quaternion.identity);
-            node.transform.parent = this.gameObject.transform;
+            RaycastHit2D[] hits = Physics2D.RaycastAll(mousePosition, new Vector2(0, 0), 0.01f);
+         
+            if(hits.Length == 0)
+            {
+                GameObject node = Instantiate(nodePrefab, mousePosition, Quaternion.identity);
+                node.transform.parent = this.gameObject.transform;
+                GraphController.Nodes.Add(node);
+            }
         }
     }
 
