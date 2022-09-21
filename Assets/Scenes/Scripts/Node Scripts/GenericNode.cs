@@ -34,13 +34,18 @@ public class GenericNode<T> : MonoBehaviour
         set { adjNodes = value; }
     }
 
+    private void OnEnable() => GraphController.Nodes.Add(this.transform.gameObject);
+    private void OnDisable() => GraphController.Nodes.Remove(this.transform.gameObject);
+
+
     public void OnMouseOver()
     {
         if (Input.GetKeyDown(KeyCode.D))
         {
-            GraphController.Nodes.Remove(this.gameObject);
             Destroy(this.gameObject);
         }
         
     }
+
+   
 }

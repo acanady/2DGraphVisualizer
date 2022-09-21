@@ -7,6 +7,7 @@ public static class GraphController
     //The singular node in the graph currently selected by the User, used both for node movement and for UI
     private static GameObject selectedNode = null;
     public static List<GameObject> Nodes = new List<GameObject>();
+    public static List<LineRenderer> Edges = new List<LineRenderer>();
 
     public static GameObject SelectedNode
     {

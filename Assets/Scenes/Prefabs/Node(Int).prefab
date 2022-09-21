@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7265652250446398596}
   m_Layer: 0
   m_Name: Node(Int)
-  m_TagString: Untagged
+  m_TagString: Node
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -144,7 +144,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e9f68209e4b8da45a40926779bb56b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HoveredOver: 0
 --- !u!1 &9116088136049355829
 GameObject:
   m_ObjectHideFlags: 0

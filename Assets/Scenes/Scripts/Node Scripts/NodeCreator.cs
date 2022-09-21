@@ -25,7 +25,6 @@ public class NodeCreator : MonoBehaviour
             {
                 GameObject node = Instantiate(nodePrefab, mousePosition, Quaternion.identity);
                 node.transform.parent = this.gameObject.transform;
-                GraphController.Nodes.Add(node);
             }
         }
     }
